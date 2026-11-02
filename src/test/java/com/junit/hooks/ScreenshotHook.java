@@ -1,17 +1,17 @@
 package com.junit.hooks;
 
 import com.junit.driver.DriverManager;
+import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import org.junit.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class ScreenshotHook {
-    @After
-    public void takeScreenshot(Scenario scenario){
-//        scenario.write(DriverManager.getDriver().getCurrentUrl());
-        byte[] screenshot=((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
-       String s = "image/png";
-        scenario.attach(screenshot, s, scenario.getName());
+    @After(order = 1)
+    public void takeScreenshot(Scenario scenario) {
+        if (DriverManager.isDriverInitialized()) {
+            byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+        }
     }
 }

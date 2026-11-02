@@ -1,12 +1,11 @@
 package com.junit.hooks;
 
 import com.junit.driver.DriverManager;
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
 
 public class DriverHooks {
-    @After
-    public void quitDriver(){
+    @After(order = 0)
+    public void quitDriver() {
         DriverManager.quitDriver();
     }
 }
