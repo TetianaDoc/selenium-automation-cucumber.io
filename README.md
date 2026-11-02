@@ -1,5 +1,7 @@
 # Cucumber Selenium Automation
 
+[![UI Automation Tests](https://github.com/TetianaDoc/selenium-automation-cucumber.io/actions/workflows/ci.yml/badge.svg)](https://github.com/TetianaDoc/selenium-automation-cucumber.io/actions/workflows/ci.yml)
+
 A UI test automation framework built with **Java 17**, **Selenium WebDriver 4**, **Cucumber 7 (BDD)**, **JUnit 4**, and **AssertJ** following the **Page Object** and **Action** design patterns.
 
 ---
