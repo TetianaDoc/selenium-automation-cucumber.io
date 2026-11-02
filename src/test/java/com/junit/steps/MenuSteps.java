@@ -2,6 +2,7 @@ package com.junit.steps;
 
 import com.junit.actions.DocsAction;
 import com.junit.actions.HomeAction;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -12,7 +13,7 @@ public class MenuSteps {
     private final HomeAction homeAction = new HomeAction();
     private final DocsAction docsAction = new DocsAction();
 
-    @When("the user opens Cucumber website")
+    @Given("the user opens Cucumber website")
     public void opensCucumberWebsite() {
         homeAction.openCucumberWebsite();
     }
@@ -24,12 +25,12 @@ public class MenuSteps {
 
     @When("the user clicks on the {string} section")
     public void clickOnSection(String section) {
-        homeAction.menuSection();
+        homeAction.menuSection(section);
     }
 
     @When("the user clicks on the {string} item")
     public void clickOnItem(String item) {
-        homeAction.menuChildItem();
+        homeAction.menuChildItem(item);
     }
 
     @Then("page with title {string} is displayed")
@@ -38,6 +39,4 @@ public class MenuSteps {
                 .overridingErrorMessage("Page with title '%s' is not displayed", pageTitle)
                 .isTrue();
     }
-
-
 }

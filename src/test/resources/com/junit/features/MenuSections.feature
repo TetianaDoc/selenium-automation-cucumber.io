@@ -8,5 +8,5 @@ Feature: As a user I want to get ability to use menu sections
     And the user clicks on the <item> item
     Then page with title <pageTitle> is displayed
     Examples:
-      | section | item             | pageTitle        |
-      | "Docs"  | "Gherkin Syntax" | "Gherkin Syntax" |
+      | section         | item      | pageTitle |
+      | "Documentation" | "Gherkin" | "Gherkin" |
